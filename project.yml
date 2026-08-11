@@ -16,6 +16,7 @@ targets:
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.saujanashafi.opengamble.poker.OpenGamblePoker
+        GENERATE_INFOPLIST_FILE: YES
         ENABLE_TESTABILITY: YES
   OpenGamblePokerTests:
     type: bundle.unit-test
@@ -26,3 +27,15 @@ targets:
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.saujanashafi.opengamble.poker.OpenGamblePokerTests
+        GENERATE_INFOPLIST_FILE: YES
+schemes:
+  OpenGamblePoker:
+    build:
+      targets:
+        OpenGamblePoker_macOS: all
+    test:
+      config: Debug
+      targets:
+        - OpenGamblePokerTests
+    run:
+      config: Debug

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4AA8BD6C99419540F02C1873 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA25BB52BCDD8C1EA3E86DAB /* Card.swift */; };
+		534C328A5031BF3B4C9496AC /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA25BB52BCDD8C1EA3E86DAB /* Card.swift */; };
+		85EA32026AC85E28D08B5B99 /* OpenGamblePokerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0650EABBC09CC66FCD5C2264 /* OpenGamblePokerTests.swift */; };
+		C93F31D9E013DC436F83B479 /* CardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BFF28401CA6C9187E0242F /* CardTests.swift */; };
 		F457E71EB6565242F79B48D5 /* OpenGamblePoker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93B4E7B4C2508DCEA641A256 /* OpenGamblePoker.framework */; };
 		FB66C7A9BF07115DE7DE7160 /* OpenGamblePoker.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 93B4E7B4C2508DCEA641A256 /* OpenGamblePoker.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
@@ -36,9 +40,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0650EABBC09CC66FCD5C2264 /* OpenGamblePokerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenGamblePokerTests.swift; sourceTree = "<group>"; };
 		229364B9208AC656C204E6E2 /* OpenGamblePokerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OpenGamblePokerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		93B4E7B4C2508DCEA641A256 /* OpenGamblePoker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OpenGamblePoker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B66274702CE8E92E44512E21 /* OpenGamblePoker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OpenGamblePoker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA25BB52BCDD8C1EA3E86DAB /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		F8BFF28401CA6C9187E0242F /* CardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +82,7 @@
 		465650035DF81B8C295536A0 /* OpenGamblePoker */ = {
 			isa = PBXGroup;
 			children = (
+				EA25BB52BCDD8C1EA3E86DAB /* Card.swift */,
 			);
 			path = OpenGamblePoker;
 			sourceTree = "<group>";
@@ -82,6 +90,8 @@
 		A4A00574F843989001E3B88C /* OpenGamblePokerTests */ = {
 			isa = PBXGroup;
 			children = (
+				F8BFF28401CA6C9187E0242F /* CardTests.swift */,
+				0650EABBC09CC66FCD5C2264 /* OpenGamblePokerTests.swift */,
 			);
 			path = OpenGamblePokerTests;
 			sourceTree = "<group>";
@@ -180,6 +190,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C93F31D9E013DC436F83B479 /* CardTests.swift in Sources */,
+				85EA32026AC85E28D08B5B99 /* OpenGamblePokerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -187,6 +199,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				534C328A5031BF3B4C9496AC /* Card.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -194,6 +207,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4AA8BD6C99419540F02C1873 /* Card.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -213,6 +227,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -234,6 +249,7 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_TESTABILITY = YES;
+				GENERATE_INFOPLIST_FILE = YES;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -252,6 +268,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -272,6 +289,7 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_TESTABILITY = YES;
+				GENERATE_INFOPLIST_FILE = YES;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -297,6 +315,7 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_TESTABILITY = YES;
+				GENERATE_INFOPLIST_FILE = YES;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -383,6 +402,7 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_TESTABILITY = YES;
+				GENERATE_INFOPLIST_FILE = YES;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
