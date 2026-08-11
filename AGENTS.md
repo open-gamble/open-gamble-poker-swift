@@ -33,6 +33,16 @@ npm run dev                  # nodemon + ts-node on src/index.ts
 - No CI. README.md is the API reference; keep it in sync when the facade changes.
 - `.sdd/` contains language-agnostic design docs of the engine logic (written for a Swift re-port) — update them when the logic in `src/lib/` changes.
 
+## Swift port (OpenGamblePoker)
+
+- `OpenGamblePoker/` is the Swift library source (single framework target `OpenGamblePoker`, iOS + macOS), ported from `.sdd/` + `src/lib/`. `Tests/OpenGamblePokerTests/` holds swift-testing (`@Test`/`#expect`) unit tests.
+- **`project.yml` is the source of truth** for the Xcode project (XcodeGen). Never hand-edit `OpenGamblePoker.xcodeproj/project.pbxproj`.
+- Run `xcodegen generate` after adding/removing source files or targets, and include the regenerated project in the **same commit** as the source change. Never commit a generated-only change.
+- Test locally:
+  ```sh
+  xcodegen generate
+  xcodebuild -project OpenGamblePoker.xcodeproj -scheme OpenGamblePoker -destination 'platform=macOS' test
+  ```
 ## Hand lifecycle (high level)
 
 `sitDown`/`standUp` (pre-hand) → `startHand` (ante, blinds, deal) → repeat `playerToAct` + `actionTaken` while `isBettingRoundInProgress` → `endBettingRound` → … → `showdown` → `winners`. During a hand, standing up is only allowed for the player to act (auto-folds) or others (sets automatic FOLD). Players busted at showdown are stood up automatically.
