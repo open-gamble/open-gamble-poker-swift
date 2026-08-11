@@ -74,4 +74,15 @@ struct DeckReshuffleTests {
         #expect(drawn == 52)
         #expect(deck.count == 52)
     }
+
+    @Test("default shuffle yields a permutation of all 52 unique cards")
+    func defaultShuffleYieldsPermutation() {
+        let deck = Deck()
+        var unique = Set<Int>()
+        for _ in 0..<52 {
+            let card = deck.draw()
+            unique.insert(card.rank.rawValue * 4 + card.suit.rawValue)
+        }
+        #expect(unique.count == 52)
+    }
 }
