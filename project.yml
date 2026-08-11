@@ -19,10 +19,10 @@ targets:
         ENABLE_TESTABILITY: YES
   OpenGamblePokerTests:
     type: bundle.unit-test
-    platform: [iOS, macOS]
-    sources: [Tests/OpenGamblePokerTests]
+    platform: macOS
+    sources: [OpenGamblePokerTests]
     dependencies:
-      - target: OpenGamblePoker
+      - target: OpenGamblePoker_macOS
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.saujanashafi.opengamble.poker.OpenGamblePokerTests
