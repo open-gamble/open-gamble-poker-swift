@@ -6,7 +6,7 @@ public enum CardSuit: Int, Sendable {
     case clubs, diamonds, hearts, spades
 }
 
-public struct Card: Sendable {
+public struct Card: Sendable, Equatable {
     public let rank: CardRank
     public let suit: CardSuit
 
