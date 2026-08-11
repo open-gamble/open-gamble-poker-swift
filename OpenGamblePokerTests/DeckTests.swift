@@ -7,8 +7,10 @@ private func reverseShuffle(_ cards: inout [Card]) {
     cards.reverse()
 }
 
-@Suite struct DeckConstructionTests {
-    @Test func createsFiftyTwoUniqueCards() {
+@Suite("Deck construction")
+struct DeckConstructionTests {
+    @Test("A new deck contains all 52 unique cards")
+    func createsFiftyTwoUniqueCards() {
         let deck = Deck { _ in }
         var unique = Set<Int>()
         for _ in 0..<52 {
@@ -18,7 +20,8 @@ private func reverseShuffle(_ cards: inout [Card]) {
         #expect(unique.count == 52)
     }
 
-    @Test func constructionOrderIsSuitMajorRankMinor() {
+    @Test("Cards are built suit-major, rank-minor and drawn from the end")
+    func constructionOrderIsSuitMajorRankMinor() {
         let deck = Deck { _ in }
         #expect(deck.draw() == Card(rank: .ace, suit: .spades))
         #expect(deck.draw() == Card(rank: .king, suit: .spades))
@@ -28,8 +31,10 @@ private func reverseShuffle(_ cards: inout [Card]) {
     }
 }
 
-@Suite struct DeckDrawTests {
-    @Test func preArrangedCardsDrawInInsertionOrder() {
+@Suite("Deck drawing")
+struct DeckDrawTests {
+    @Test("Pre-arranged cards at array[51 - n] are drawn in that order")
+    func preArrangedCardsDrawInInsertionOrder() {
         let deck = Deck { cards in
             cards[51] = Card(rank: .two, suit: .clubs)
             cards[50] = Card(rank: .king, suit: .hearts)
@@ -38,7 +43,8 @@ private func reverseShuffle(_ cards: inout [Card]) {
         #expect(deck.draw() == Card(rank: .king, suit: .hearts))
     }
 
-    @Test func countStaysFiftyTwoAfterDraws() {
+    @Test("count stays 52 after draws, mirroring deck.length")
+    func countStaysFiftyTwoAfterDraws() {
         let deck = Deck { _ in }
         _ = deck.draw()
         _ = deck.draw()
@@ -47,8 +53,10 @@ private func reverseShuffle(_ cards: inout [Card]) {
     }
 }
 
-@Suite struct DeckReshuffleTests {
-    @Test func fillAndShuffleResetsCountAndReshufflesWholeArray() {
+@Suite("Deck reshuffling")
+struct DeckReshuffleTests {
+    @Test("fillAndShuffle resets the count and reshuffles the whole array")
+    func fillAndShuffleResetsCountAndReshufflesWholeArray() {
         let deck = Deck(shuffleAlgorithm: reverseShuffle)
         _ = deck.draw()
         _ = deck.draw()
