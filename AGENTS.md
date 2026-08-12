@@ -20,20 +20,22 @@ Sources of truth for the port: `.sdd/` design docs + `src/lib/` TS code + `test/
 | `src/lib/round.ts` | `Round.swift` | ✅ ported |
 | `src/lib/betting-round.ts` | `BettingRound.swift` | ✅ ported |
 | `src/lib/dealer.ts` | `Dealer.swift` | pending |
-| `src/lib/hand.ts` | `Hand.swift` | pending |
+| `src/lib/hand.ts` | `Hand.swift` | ✅ ported |
 | `src/lib/table.ts` | `Table.swift` | pending |
 | `src/util/array.ts`, `src/util/bit.ts` | `ArrayUtils.swift`, `BitUtils.swift` | ✅ ported |
 | `src/facade/poker.ts` | public `Table` facade | pending |
 | `src/types/*.d.ts` | typealiases in `Types.swift` | ✅ ported |
 
-**Port progress:** 11 of 14 files ported. 117 tests in 30 suites pass
+`src/type-guards/chips.ts` (`isChips`) is intentionally **not** ported — it's a runtime TS type guard that Swift gets free via static typing.
+
+**Port progress:** 12 of 14 files ported. 122 tests in 35 suites pass
 (`xcodegen generate && xcodebuild -project OpenGamblePoker.xcodeproj -scheme OpenGamblePoker -destination 'platform=macOS' test`).
-Next in dependency order: `Hand` (all leaf dependencies are ported), then `Dealer`, then `Table` + the facade.
+Next in dependency order: `Dealer` (all dependencies are ported), then `Table` + the facade.
 
 ### TS → Swift idiom rules
 
 - Action **bitmask enums** (`FOLD CHECK CALL BET RAISE`, automatic actions) → `OptionSet`. Validate single-flag values with a popcount (`BitUtils`).
-- `CardRank`, `CardSuit`, `HandRanking` → Int raw-value enums; **preserve numeric significance** (`HandRanking` is `HIGH_CARD=0 … ROYAL_FLUSH=9`).
+- `CardRank`, `CardSuit`, `HandRanking` → Int raw-value enums; **preserve numeric significance** (`HandRanking` is `HIGH_CARD=0 … ROYAL_FLUSH=9`). Swift `CardRank` cases are `two…nine, ten, jack, queen, king, ace` (TS: `_2…_9, T, J, Q, K, A`) — rank 2 is raw value 0.
 - Node `assert` guards → `precondition`/`assert`. Assertions ARE the documented API contracts — keep them.
 - **Deck draws from the END**. Tests inject a deterministic deck via a no-op shuffle RNG and pre-arrange cards at `array[51 - index]`. Do not break this contract.
 - Chips are `Int` (cents); no `Double` in the engine.
@@ -53,6 +55,7 @@ Port each spec (`test/lib/*.spec.ts`, `test/facade/poker.spec.ts`) to swift-test
   xcodegen generate
   xcodebuild -project OpenGamblePoker.xcodeproj -scheme OpenGamblePoker -destination 'platform=macOS' test
   ```
+- Run a single Swift test suite with `-only-testing:OpenGamblePokerTests/RoundTests` appended to the `xcodebuild` above.
 
 ## Commands
 
