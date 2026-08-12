@@ -355,7 +355,9 @@ public struct Table: Sendable {
         if _buttonSetManually {
             _buttonSetManually = false
             _firstTimeButton = false
-            _button = _tablePlayers[_button] != nil ? _button : (_tablePlayers.firstIndex(where: { $0 != nil }) ?? -1)
+            if !(_button < _tablePlayers.count && _tablePlayers[_button] != nil) {
+                _button = _tablePlayers.firstIndex(where: { $0 != nil }) ?? -1
+            }
             precondition(_button != -1)
         } else if _firstTimeButton {
             let seat = _tablePlayers.firstIndex(where: { $0 != nil }) ?? -1
