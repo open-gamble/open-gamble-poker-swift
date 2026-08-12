@@ -19,7 +19,7 @@ Sources of truth for the port: `.sdd/` design docs + `src/lib/` TS code + `test/
 | `src/lib/pot-manager.ts` | `PotManager.swift` | ✅ ported |
 | `src/lib/round.ts` | `Round.swift` | ✅ ported |
 | `src/lib/betting-round.ts` | `BettingRound.swift` | ✅ ported |
-| `src/lib/dealer.ts` | `Dealer.swift` | pending |
+| `src/lib/dealer.ts` | `Dealer.swift` | ✅ ported |
 | `src/lib/hand.ts` | `Hand.swift` | ✅ ported |
 | `src/lib/table.ts` | `Table.swift` | pending |
 | `src/util/array.ts`, `src/util/bit.ts` | `ArrayUtils.swift`, `BitUtils.swift` | ✅ ported |
@@ -28,9 +28,11 @@ Sources of truth for the port: `.sdd/` design docs + `src/lib/` TS code + `test/
 
 `src/type-guards/chips.ts` (`isChips`) is intentionally **not** ported — it's a runtime TS type guard that Swift gets free via static typing.
 
-**Port progress:** 12 of 14 files ported. 122 tests in 35 suites pass
+**Port progress:** 13 of 14 files ported. 159 tests in 62 suites pass
 (`xcodegen generate && xcodebuild -project OpenGamblePoker.xcodeproj -scheme OpenGamblePoker -destination 'platform=macOS' test`).
-Next in dependency order: `Dealer` (all dependencies are ported), then `Table` + the facade.
+Next in dependency order: `Table` + the facade.
+
+`Dealer` holds its own copy of the community cards (value semantics); the public `Table` facade reads `dealer._communityCards` when exposing dealt cards.
 
 ### TS → Swift idiom rules
 
