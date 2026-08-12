@@ -1,0 +1,41 @@
+name: OpenGamblePoker
+options:
+  bundleIdPrefix: com.saujanashafi.opengamble.poker
+  createIntermediateGroups: true
+  deploymentTarget:
+    iOS: "15.0"
+    macOS: "12.0"
+settings:
+  base:
+    SWIFT_VERSION: "6.0"
+targets:
+  OpenGamblePoker:
+    type: framework
+    platform: [iOS, macOS]
+    sources: [OpenGamblePoker]
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.saujanashafi.opengamble.poker.OpenGamblePoker
+        GENERATE_INFOPLIST_FILE: YES
+        ENABLE_TESTABILITY: YES
+  OpenGamblePokerTests:
+    type: bundle.unit-test
+    platform: macOS
+    sources: [OpenGamblePokerTests]
+    dependencies:
+      - target: OpenGamblePoker_macOS
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.saujanashafi.opengamble.poker.OpenGamblePokerTests
+        GENERATE_INFOPLIST_FILE: YES
+schemes:
+  OpenGamblePoker:
+    build:
+      targets:
+        OpenGamblePoker_macOS: all
+    test:
+      config: Debug
+      targets:
+        - OpenGamblePokerTests
+    run:
+      config: Debug

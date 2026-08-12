@@ -1,3 +1,61 @@
 .idea
-node_modules
-coverage
+
+# --------------------------------------------------
+# macOS metadata
+# --------------------------------------------------
+.DS_Store
+
+# --------------------------------------------------
+# Xcode user-specific files
+# Local UI state, breakpoints, and personal settings.
+# Do not share these in Git.
+# --------------------------------------------------
+xcuserdata/
+*.xcuserstate
+*.xcscmblueprint
+*.xccheckout
+
+# User-specific data inside Xcode project/workspace bundles
+*.xcodeproj/xcuserdata/
+*.xcworkspace/xcuserdata/
+
+# --------------------------------------------------
+# Build output
+# Generated locally by Xcode.
+# --------------------------------------------------
+build/
+DerivedData/
+.derived-data-log-*
+
+# --------------------------------------------------
+# App archives and debug symbol artifacts
+# --------------------------------------------------
+*.ipa
+*.dSYM
+*.dSYM.zip
+
+# --------------------------------------------------
+# Swift Playgrounds
+# --------------------------------------------------
+timeline.xctimeline
+playground.xcworkspace
+
+# --------------------------------------------------
+# Fastlane generated artifacts
+# --------------------------------------------------
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots/
+fastlane/test_output/
+
+# --------------------------------------------------
+# Editor / temporary files
+# --------------------------------------------------
+*.swp
+*.lock
+
+# --------------------------------------------------
+# Environment files
+# --------------------------------------------------
+.env.local
+.opencode.sh
