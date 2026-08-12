@@ -1,5 +1,5 @@
 public struct PotManager: Sendable {
-    public private(set) var pots: [Pot]
+    public internal(set) var pots: [Pot]
     private var aggregateFoldedBets: Chips = 0
 
     public init() {

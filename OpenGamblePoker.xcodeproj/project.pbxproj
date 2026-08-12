@@ -9,7 +9,9 @@
 /* Begin PBXBuildFile section */
 		0950B915BAEC8EE33CB77C8D /* BettingRound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD371CC9272D5477969459F /* BettingRound.swift */; };
 		0CD3A045BE56F9BC44D047A1 /* Round.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7A1F6366BDD9820299FEBF /* Round.swift */; };
+		0DB67CB5563FFEED33CD98A8 /* Dealer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989D3343BB933336C5F0BAF3 /* Dealer.swift */; };
 		1BFB07100CB218E8556F9A66 /* ArrayUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F45698748FFA20AAFD26D6 /* ArrayUtils.swift */; };
+		223FE8A14E6A2671A27A95C8 /* Dealer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989D3343BB933336C5F0BAF3 /* Dealer.swift */; };
 		33FAA7C2D7EE4D34867F23EF /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1612E36A4C0D45141BB83A0 /* Player.swift */; };
 		35B6A177A675996412F126D7 /* PotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9F349E0583FFC622EDACC5 /* PotTests.swift */; };
 		41E817DA616250B6F3475D2E /* ArrayUtilsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DF9EE8F9B55B3364C3B70B /* ArrayUtilsTests.swift */; };
@@ -38,6 +40,7 @@
 		BE83581BBAA5296BB8674424 /* Round.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7A1F6366BDD9820299FEBF /* Round.swift */; };
 		C93F31D9E013DC436F83B479 /* CardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BFF28401CA6C9187E0242F /* CardTests.swift */; };
 		D4499C74D66152DB091E7447 /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DFAF8BB01B2BC7B1279230D /* Deck.swift */; };
+		D6516EE39993DAAC9F7BBE77 /* DealerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29490237FE2F130797AC7E49 /* DealerTests.swift */; };
 		D854695EC2DEC0811B804589 /* RoundTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69D01AE450B34053E168D63 /* RoundTests.swift */; };
 		E4DB39ED5C4B6697DAACF5D7 /* BitUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AA8C64D1792C27CA994B5F /* BitUtils.swift */; };
 		E4DCF7691E22119493FE7F0B /* ChipRange.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D3C362680E3C7532F384F4 /* ChipRange.swift */; };
@@ -82,6 +85,7 @@
 		20307D21B4731563156281E8 /* CommunityCards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityCards.swift; sourceTree = "<group>"; };
 		229364B9208AC656C204E6E2 /* OpenGamblePokerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OpenGamblePokerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		251BBD382235CE781FE8E180 /* Types.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Types.swift; sourceTree = "<group>"; };
+		29490237FE2F130797AC7E49 /* DealerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealerTests.swift; sourceTree = "<group>"; };
 		2983DFC53DE8F8BFBE6490B5 /* PotManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PotManager.swift; sourceTree = "<group>"; };
 		2FFE4C819CA14340C5A23116 /* PlayerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerTests.swift; sourceTree = "<group>"; };
 		3CD371CC9272D5477969459F /* BettingRound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BettingRound.swift; sourceTree = "<group>"; };
@@ -92,6 +96,7 @@
 		7DB8BD27E4FE3BE960E2C140 /* ChipRangeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipRangeTests.swift; sourceTree = "<group>"; };
 		85DF9EE8F9B55B3364C3B70B /* ArrayUtilsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayUtilsTests.swift; sourceTree = "<group>"; };
 		93B4E7B4C2508DCEA641A256 /* OpenGamblePoker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OpenGamblePoker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		989D3343BB933336C5F0BAF3 /* Dealer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dealer.swift; sourceTree = "<group>"; };
 		A1612E36A4C0D45141BB83A0 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		A218D59C0732F1979FFC4F78 /* BettingRoundTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BettingRoundTests.swift; sourceTree = "<group>"; };
 		AA3DDFD500B02FA2F605416D /* Hand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hand.swift; sourceTree = "<group>"; };
@@ -146,6 +151,7 @@
 				EA25BB52BCDD8C1EA3E86DAB /* Card.swift */,
 				E4D3C362680E3C7532F384F4 /* ChipRange.swift */,
 				20307D21B4731563156281E8 /* CommunityCards.swift */,
+				989D3343BB933336C5F0BAF3 /* Dealer.swift */,
 				0DFAF8BB01B2BC7B1279230D /* Deck.swift */,
 				AA3DDFD500B02FA2F605416D /* Hand.swift */,
 				A1612E36A4C0D45141BB83A0 /* Player.swift */,
@@ -166,6 +172,7 @@
 				F8BFF28401CA6C9187E0242F /* CardTests.swift */,
 				7DB8BD27E4FE3BE960E2C140 /* ChipRangeTests.swift */,
 				0602AD5B756FD67DC738732D /* CommunityCardsTests.swift */,
+				29490237FE2F130797AC7E49 /* DealerTests.swift */,
 				13D7CC7292EE325B12FFD1D0 /* DeckTests.swift */,
 				77E4958018C6AF85EF149925 /* HandTests.swift */,
 				0650EABBC09CC66FCD5C2264 /* OpenGamblePokerTests.swift */,
@@ -277,6 +284,7 @@
 				C93F31D9E013DC436F83B479 /* CardTests.swift in Sources */,
 				58E54652E0F597DD3782D2E5 /* ChipRangeTests.swift in Sources */,
 				BA23E80D77DF5E1178E9F94B /* CommunityCardsTests.swift in Sources */,
+				D6516EE39993DAAC9F7BBE77 /* DealerTests.swift in Sources */,
 				49C07D5BE8C75DC3D1F66DAC /* DeckTests.swift in Sources */,
 				B67A918D93E2D37EF5820F9C /* HandTests.swift in Sources */,
 				85EA32026AC85E28D08B5B99 /* OpenGamblePokerTests.swift in Sources */,
@@ -297,6 +305,7 @@
 				534C328A5031BF3B4C9496AC /* Card.swift in Sources */,
 				E4DCF7691E22119493FE7F0B /* ChipRange.swift in Sources */,
 				E8E236567E161357BF7226FF /* CommunityCards.swift in Sources */,
+				223FE8A14E6A2671A27A95C8 /* Dealer.swift in Sources */,
 				D4499C74D66152DB091E7447 /* Deck.swift in Sources */,
 				FD957F6DAD2E0C61EEF07A46 /* Hand.swift in Sources */,
 				4B3B8078D2A733A41E818110 /* Player.swift in Sources */,
@@ -317,6 +326,7 @@
 				4AA8BD6C99419540F02C1873 /* Card.swift in Sources */,
 				B7EDA739D6F8E221EBDBD063 /* ChipRange.swift in Sources */,
 				6714C26FFC1B44BFC9B655D3 /* CommunityCards.swift in Sources */,
+				0DB67CB5563FFEED33CD98A8 /* Dealer.swift in Sources */,
 				EF38AE3D99B1888645227A3B /* Deck.swift in Sources */,
 				8C3AC4DC767C0D7D48ECB4D1 /* Hand.swift in Sources */,
 				33FAA7C2D7EE4D34867F23EF /* Player.swift in Sources */,

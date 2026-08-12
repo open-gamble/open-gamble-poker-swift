@@ -55,6 +55,11 @@ public struct BettingRound: Sendable {
         }
     }
 
+    public func player(_ seat: SeatIndex) -> Player? {
+        guard seat >= 0 && seat < _players.count else { return nil }
+        return _players[seat]
+    }
+
     public func legalActions() -> ActionRange {
         guard let player = _players[round.playerToAct] else {
             preconditionFailure("Player to act must exist")

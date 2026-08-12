@@ -1,6 +1,6 @@
 import GameplayKit
 
-public final class Deck {
+public final class Deck: @unchecked Sendable {
     public typealias ShuffleAlgorithm = (inout [Card]) -> Void
 
     private var cards: [Card]
