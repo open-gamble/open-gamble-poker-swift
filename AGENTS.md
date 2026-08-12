@@ -17,8 +17,8 @@ Sources of truth for the port: `.sdd/` design docs + `src/lib/` TS code + `test/
 | `src/lib/community-cards.ts` | `CommunityCards.swift` | ✅ ported |
 | `src/lib/pot.ts` | `Pot.swift` | ✅ ported |
 | `src/lib/pot-manager.ts` | `PotManager.swift` | ✅ ported |
-| `src/lib/round.ts` | `Round.swift` | pending |
-| `src/lib/betting-round.ts` | `BettingRound.swift` | pending |
+| `src/lib/round.ts` | `Round.swift` | ✅ ported |
+| `src/lib/betting-round.ts` | `BettingRound.swift` | ✅ ported |
 | `src/lib/dealer.ts` | `Dealer.swift` | pending |
 | `src/lib/hand.ts` | `Hand.swift` | pending |
 | `src/lib/table.ts` | `Table.swift` | pending |
@@ -26,9 +26,9 @@ Sources of truth for the port: `.sdd/` design docs + `src/lib/` TS code + `test/
 | `src/facade/poker.ts` | public `Table` facade | pending |
 | `src/types/*.d.ts` | typealiases in `Types.swift` | ✅ ported |
 
-**Port progress:** 9 of 14 files ported. 52 tests in 20 suites pass
+**Port progress:** 11 of 14 files ported. 117 tests in 30 suites pass
 (`xcodegen generate && xcodebuild -project OpenGamblePoker.xcodeproj -scheme OpenGamblePoker -destination 'platform=macOS' test`).
-Next in dependency order: `Round`/`BettingRound`, then `Hand` (all leaf dependencies are ported), then `Dealer`, then `Table` + the facade.
+Next in dependency order: `Hand` (all leaf dependencies are ported), then `Dealer`, then `Table` + the facade.
 
 ### TS → Swift idiom rules
 
