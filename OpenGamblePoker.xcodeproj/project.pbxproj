@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0950B915BAEC8EE33CB77C8D /* BettingRound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD371CC9272D5477969459F /* BettingRound.swift */; };
 		0CD3A045BE56F9BC44D047A1 /* Round.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7A1F6366BDD9820299FEBF /* Round.swift */; };
 		1BFB07100CB218E8556F9A66 /* ArrayUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F45698748FFA20AAFD26D6 /* ArrayUtils.swift */; };
 		33FAA7C2D7EE4D34867F23EF /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1612E36A4C0D45141BB83A0 /* Player.swift */; };
@@ -17,6 +18,7 @@
 		4B3B8078D2A733A41E818110 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1612E36A4C0D45141BB83A0 /* Player.swift */; };
 		52C4E15A3238B9BD07C7F001 /* PotManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2983DFC53DE8F8BFBE6490B5 /* PotManager.swift */; };
 		534C328A5031BF3B4C9496AC /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA25BB52BCDD8C1EA3E86DAB /* Card.swift */; };
+		567C8A755E6407382AC4A6BE /* BettingRoundTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A218D59C0732F1979FFC4F78 /* BettingRoundTests.swift */; };
 		58E54652E0F597DD3782D2E5 /* ChipRangeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB8BD27E4FE3BE960E2C140 /* ChipRangeTests.swift */; };
 		5F8E4DF4E359913C478A0482 /* ArrayUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F45698748FFA20AAFD26D6 /* ArrayUtils.swift */; };
 		6714C26FFC1B44BFC9B655D3 /* CommunityCards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20307D21B4731563156281E8 /* CommunityCards.swift */; };
@@ -27,6 +29,7 @@
 		8BBA081D8BBAB718E405119A /* BitUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AA8C64D1792C27CA994B5F /* BitUtils.swift */; };
 		93632AB9BED50A093EDAAAC2 /* Pot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7689AE695FDD473900E80F1A /* Pot.swift */; };
 		9A3D52F9C93A479A79DEC0AC /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251BBD382235CE781FE8E180 /* Types.swift */; };
+		B24CA014342C6957B01D4B6D /* BettingRound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD371CC9272D5477969459F /* BettingRound.swift */; };
 		B7EDA739D6F8E221EBDBD063 /* ChipRange.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D3C362680E3C7532F384F4 /* ChipRange.swift */; };
 		BA23E80D77DF5E1178E9F94B /* CommunityCardsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0602AD5B756FD67DC738732D /* CommunityCardsTests.swift */; };
 		BB02D8E896682DDE3BE797B6 /* PotManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2983DFC53DE8F8BFBE6490B5 /* PotManager.swift */; };
@@ -78,6 +81,7 @@
 		251BBD382235CE781FE8E180 /* Types.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Types.swift; sourceTree = "<group>"; };
 		2983DFC53DE8F8BFBE6490B5 /* PotManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PotManager.swift; sourceTree = "<group>"; };
 		2FFE4C819CA14340C5A23116 /* PlayerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerTests.swift; sourceTree = "<group>"; };
+		3CD371CC9272D5477969459F /* BettingRound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BettingRound.swift; sourceTree = "<group>"; };
 		635C7DA3254AE747BD46D4D6 /* BitUtilsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitUtilsTests.swift; sourceTree = "<group>"; };
 		7689AE695FDD473900E80F1A /* Pot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pot.swift; sourceTree = "<group>"; };
 		7BF1F16E2661E7C3154D2427 /* PotManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PotManagerTests.swift; sourceTree = "<group>"; };
@@ -85,6 +89,7 @@
 		85DF9EE8F9B55B3364C3B70B /* ArrayUtilsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayUtilsTests.swift; sourceTree = "<group>"; };
 		93B4E7B4C2508DCEA641A256 /* OpenGamblePoker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OpenGamblePoker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1612E36A4C0D45141BB83A0 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		A218D59C0732F1979FFC4F78 /* BettingRoundTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BettingRoundTests.swift; sourceTree = "<group>"; };
 		B1F45698748FFA20AAFD26D6 /* ArrayUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayUtils.swift; sourceTree = "<group>"; };
 		B66274702CE8E92E44512E21 /* OpenGamblePoker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OpenGamblePoker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8AA8C64D1792C27CA994B5F /* BitUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitUtils.swift; sourceTree = "<group>"; };
@@ -131,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				B1F45698748FFA20AAFD26D6 /* ArrayUtils.swift */,
+				3CD371CC9272D5477969459F /* BettingRound.swift */,
 				B8AA8C64D1792C27CA994B5F /* BitUtils.swift */,
 				EA25BB52BCDD8C1EA3E86DAB /* Card.swift */,
 				E4D3C362680E3C7532F384F4 /* ChipRange.swift */,
@@ -149,6 +155,7 @@
 			isa = PBXGroup;
 			children = (
 				85DF9EE8F9B55B3364C3B70B /* ArrayUtilsTests.swift */,
+				A218D59C0732F1979FFC4F78 /* BettingRoundTests.swift */,
 				635C7DA3254AE747BD46D4D6 /* BitUtilsTests.swift */,
 				F8BFF28401CA6C9187E0242F /* CardTests.swift */,
 				7DB8BD27E4FE3BE960E2C140 /* ChipRangeTests.swift */,
@@ -258,6 +265,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				41E817DA616250B6F3475D2E /* ArrayUtilsTests.swift in Sources */,
+				567C8A755E6407382AC4A6BE /* BettingRoundTests.swift in Sources */,
 				F76AD16FC68C0655C825F65D /* BitUtilsTests.swift in Sources */,
 				C93F31D9E013DC436F83B479 /* CardTests.swift in Sources */,
 				58E54652E0F597DD3782D2E5 /* ChipRangeTests.swift in Sources */,
@@ -276,6 +284,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5F8E4DF4E359913C478A0482 /* ArrayUtils.swift in Sources */,
+				B24CA014342C6957B01D4B6D /* BettingRound.swift in Sources */,
 				E4DB39ED5C4B6697DAACF5D7 /* BitUtils.swift in Sources */,
 				534C328A5031BF3B4C9496AC /* Card.swift in Sources */,
 				E4DCF7691E22119493FE7F0B /* ChipRange.swift in Sources */,
@@ -294,6 +303,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1BFB07100CB218E8556F9A66 /* ArrayUtils.swift in Sources */,
+				0950B915BAEC8EE33CB77C8D /* BettingRound.swift in Sources */,
 				8BBA081D8BBAB718E405119A /* BitUtils.swift in Sources */,
 				4AA8BD6C99419540F02C1873 /* Card.swift in Sources */,
 				B7EDA739D6F8E221EBDBD063 /* ChipRange.swift in Sources */,
