@@ -6,7 +6,7 @@ Chip amounts only support integers. Treat the amounts as cents and do the conver
 
 ## Acknowledgement
 
-This library is a Swift port of the [C++ poker library](https://github.com/JankoDedic/poker) written by Janko Dedic, via the TypeScript [poker-ts](https://github.com/open-gamble/open-gamble-poker) port by Claudijo. Note that minor differences in the API might exist.
+This library is a Swift port of the TypeScript [poker-ts](https://github.com/claudijo/poker-ts) written by [Claudijo](https://github.com/claudijo), which itself ports the [C++ poker library](https://github.com/JankoDedic/poker) designed by Janko Dedic. This project is a port of that engine into Swift. Note that minor differences in the API might exist.
 
 ## Installation
 
