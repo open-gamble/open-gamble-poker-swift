@@ -23,14 +23,16 @@ Sources of truth for the port: `.sdd/` design docs + `src/lib/` TS code + `test/
 | `src/lib/hand.ts` | `Hand.swift` | ✅ ported |
 | `src/lib/table.ts` | `Table.swift` | ✅ ported |
 | `src/util/array.ts`, `src/util/bit.ts` | `ArrayUtils.swift`, `BitUtils.swift` | ✅ ported |
-| `src/facade/poker.ts` | public `Table` facade | pending |
+| `src/facade/poker.ts` | public `Poker.Table` facade | ✅ ported |
 | `src/types/*.d.ts` | typealiases in `Types.swift` | ✅ ported |
 
 `src/type-guards/chips.ts` (`isChips`) is intentionally **not** ported — it's a runtime TS type guard that Swift gets free via static typing.
 
-**Port progress:** 14 of 14 files ported. 205 tests in 106 suites pass
+**Port progress:** 14 of 14 files + the public `Table` facade ported. 232 tests in 111 suites pass
 (`xcodegen generate && xcodebuild -project OpenGamblePoker.xcodeproj -scheme OpenGamblePoker -destination 'platform=macOS' test`).
-Next: the public `Table` facade (`src/facade/poker.ts`).
+Port complete — all `src/` is mirrored in Swift.
+
+The facade lives in `Poker.swift` as a `public enum Poker` namespace containing `Poker.Table` (a `final class`) plus the facade value types (`Poker.Card`, `Poker.Action`, `Poker.AutomaticAction`, `Poker.Seat`, `Poker.LegalActions`, `Poker.ForcedBets`, `Poker.Winner`). It maps string enums ↔ internal enums; internal types are referenced as `OpenGamblePoker.Table` (to avoid clashing with the facade class's own `Table` name).
 
 `Dealer` holds its own copy of the community cards (value semantics); the public `Table` facade reads `dealer._communityCards` when exposing dealt cards.
 
@@ -41,6 +43,7 @@ Next: the public `Table` facade (`src/facade/poker.ts`).
 - Action **bitmask enums** (`FOLD CHECK CALL BET RAISE`, automatic actions) → `OptionSet`. Validate single-flag values with a popcount (`BitUtils`).
 - `CardRank`, `CardSuit`, `HandRanking` → Int raw-value enums; **preserve numeric significance** (`HandRanking` is `HIGH_CARD=0 … ROYAL_FLUSH=9`). Swift `CardRank` cases are `two…nine, ten, jack, queen, king, ace` (TS: `_2…_9, T, J, Q, K, A`) — rank 2 is raw value 0.
 - Node `assert` guards → `precondition`/`assert`. Assertions ARE the documented API contracts — keep them.
+- **JS out-of-bounds reads return `undefined`; Swift crashes.** When porting index accesses that TS may perform out of bounds (e.g. `_handPlayers[this._button]` with an invalid manual button seat), guard the index explicitly — `Table.incrementButton` does `_button < count && _tablePlayers[_button] != nil`.
 - **Deck draws from the END**. Tests inject a deterministic deck via a no-op shuffle RNG and pre-arrange cards at `array[51 - index]`. Do not break this contract.
 - Chips are `Int` (cents); no `Double` in the engine.
 - The public `Table` facade maps string enums ↔ internal enums and uses camelCase names. Don't change facade behavior.
