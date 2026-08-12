@@ -8,23 +8,27 @@ Sources of truth for the port: `.sdd/` design docs + `src/lib/` TS code + `test/
 
 ### File mapping (src → OpenGamblePoker)
 
-| TypeScript | Swift |
-|---|---|
-| `src/lib/card.ts` | `Card.swift` |
-| `src/lib/deck.ts` | `Deck.swift` |
-| `src/lib/player.ts` | `Player.swift` |
-| `src/lib/chip-range.ts` | `ChipRange.swift` |
-| `src/lib/community-cards.ts` | `CommunityCards.swift` |
-| `src/lib/pot.ts` | `Pot.swift` |
-| `src/lib/pot-manager.ts` | `PotManager.swift` |
-| `src/lib/round.ts` | `Round.swift` |
-| `src/lib/betting-round.ts` | `BettingRound.swift` |
-| `src/lib/dealer.ts` | `Dealer.swift` |
-| `src/lib/hand.ts` | `Hand.swift` |
-| `src/lib/table.ts` | `Table.swift` |
-| `src/util/array.ts`, `src/util/bit.ts` | `ArrayUtils.swift`, `BitUtils.swift` |
-| `src/facade/poker.ts` | public `Table` facade |
-| `src/types/*.d.ts` | typealiases in `Types.swift` |
+| TypeScript | Swift | Status |
+|---|---|---|
+| `src/lib/card.ts` | `Card.swift` | ✅ ported |
+| `src/lib/deck.ts` | `Deck.swift` | ✅ ported |
+| `src/lib/player.ts` | `Player.swift` | ✅ ported |
+| `src/lib/chip-range.ts` | `ChipRange.swift` | ✅ ported |
+| `src/lib/community-cards.ts` | `CommunityCards.swift` | ✅ ported |
+| `src/lib/pot.ts` | `Pot.swift` | ✅ ported |
+| `src/lib/pot-manager.ts` | `PotManager.swift` | ✅ ported |
+| `src/lib/round.ts` | `Round.swift` | pending |
+| `src/lib/betting-round.ts` | `BettingRound.swift` | pending |
+| `src/lib/dealer.ts` | `Dealer.swift` | pending |
+| `src/lib/hand.ts` | `Hand.swift` | pending |
+| `src/lib/table.ts` | `Table.swift` | pending |
+| `src/util/array.ts`, `src/util/bit.ts` | `ArrayUtils.swift`, `BitUtils.swift` | ✅ ported |
+| `src/facade/poker.ts` | public `Table` facade | pending |
+| `src/types/*.d.ts` | typealiases in `Types.swift` | ✅ ported |
+
+**Port progress:** 9 of 14 files ported. 52 tests in 20 suites pass
+(`xcodegen generate && xcodebuild -project OpenGamblePoker.xcodeproj -scheme OpenGamblePoker -destination 'platform=macOS' test`).
+Next in dependency order: `Round`/`BettingRound`, then `Hand` (all leaf dependencies are ported), then `Dealer`, then `Table` + the facade.
 
 ### TS → Swift idiom rules
 
