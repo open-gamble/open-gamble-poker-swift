@@ -28,6 +28,12 @@ DerivedData/
 .derived-data-log-*
 
 # --------------------------------------------------
+# Swift Package Manager build output
+# --------------------------------------------------
+.build/
+.swiftpm/
+
+# --------------------------------------------------
 # App archives and debug symbol artifacts
 # --------------------------------------------------
 *.ipa
