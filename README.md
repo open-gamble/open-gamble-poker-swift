@@ -12,7 +12,7 @@ This library is a Swift port of the TypeScript [poker-ts](https://github.com/cla
 
 ### Swift Package Manager
 
-Add the package to your project with the git URL `https://github.com/open-gamble/open-gamble-poker-swift` (from version `1.0.0`), then import the `OpenGamblePoker` product:
+Add the package to your project with the git URL `https://github.com/open-gamble/open-gamble-poker-swift` (from version `1.6.0`), then import the `OpenGamblePoker` product:
 
 ```swift
 import OpenGamblePoker
