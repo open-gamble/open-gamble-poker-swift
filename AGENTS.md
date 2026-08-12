@@ -21,20 +21,22 @@ Sources of truth for the port: `.sdd/` design docs + `src/lib/` TS code + `test/
 | `src/lib/betting-round.ts` | `BettingRound.swift` | ✅ ported |
 | `src/lib/dealer.ts` | `Dealer.swift` | ✅ ported |
 | `src/lib/hand.ts` | `Hand.swift` | ✅ ported |
-| `src/lib/table.ts` | `Table.swift` | pending |
+| `src/lib/table.ts` | `Table.swift` | ✅ ported |
 | `src/util/array.ts`, `src/util/bit.ts` | `ArrayUtils.swift`, `BitUtils.swift` | ✅ ported |
 | `src/facade/poker.ts` | public `Table` facade | pending |
 | `src/types/*.d.ts` | typealiases in `Types.swift` | ✅ ported |
 
 `src/type-guards/chips.ts` (`isChips`) is intentionally **not** ported — it's a runtime TS type guard that Swift gets free via static typing.
 
-**Port progress:** 13 of 14 files ported. 159 tests in 62 suites pass
+**Port progress:** 14 of 14 files ported. 205 tests in 106 suites pass
 (`xcodegen generate && xcodebuild -project OpenGamblePoker.xcodeproj -scheme OpenGamblePoker -destination 'platform=macOS' test`).
-Next in dependency order: `Table` + the facade.
+Next: the public `Table` facade (`src/facade/poker.ts`).
 
 `Dealer` holds its own copy of the community cards (value semantics); the public `Table` facade reads `dealer._communityCards` when exposing dealt cards.
 
 ### TS → Swift idiom rules
+
+- The internal `Table` has no `_handPlayers` field. TS aliases it with the Dealer's roster (`dealer.ts:56` stores it directly); Swift reads `dealer.bettingRoundPlayers()` (the live `_players`) as the source of truth for `updateTablePlayers`, `clearFoldedBets`, `amendAutomaticActions`, `takeAutomaticAction`, and mid-hand `standUp`. Do not reintroduce a stale snapshot.
 
 - Action **bitmask enums** (`FOLD CHECK CALL BET RAISE`, automatic actions) → `OptionSet`. Validate single-flag values with a popcount (`BitUtils`).
 - `CardRank`, `CardSuit`, `HandRanking` → Int raw-value enums; **preserve numeric significance** (`HandRanking` is `HIGH_CARD=0 … ROYAL_FLUSH=9`). Swift `CardRank` cases are `two…nine, ten, jack, queen, king, ace` (TS: `_2…_9, T, J, Q, K, A`) — rank 2 is raw value 0.
