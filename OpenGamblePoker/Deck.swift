@@ -1,5 +1,3 @@
-import GameplayKit
-
 public final class Deck: @unchecked Sendable {
     public typealias ShuffleAlgorithm = (inout [Card]) -> Void
 
@@ -35,8 +33,9 @@ public final class Deck: @unchecked Sendable {
     }
 
     public static func defaultShuffle(_ cards: inout [Card]) {
-        let distribution = GKShuffledDistribution(lowestValue: 0, highestValue: cards.count - 1)
-        let shuffled = (0..<cards.count).map { _ in cards[distribution.nextInt()] }
-        cards = shuffled
+        for index in stride(from: cards.count - 1, through: 1, by: -1) {
+            let newIndex = Int.random(in: 0...index)
+            cards.swapAt(index, newIndex)
+        }
     }
 }
